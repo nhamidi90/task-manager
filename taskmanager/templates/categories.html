@@ -4,6 +4,13 @@
 <h3 class="light-blue-text text-darken-4 center-align">Categories</h3>
 
 <div class="row">
+  <div class="col s12 center-align">
+      <a href="{{ url_for('add_category') }}" class="btn-large light-blue darken-2"></a>
+          Add Category <i class="material-icons">add</i>
+  </div>
+</div>
+
+<div class="row">
     {% for category in categories %}
     <div class="col s12 m6">
       <div class="card light-blue darken-4 center-align">
@@ -12,7 +19,7 @@
         </div>
 
         {% if category.owner == session.user %}
-        
+
         <div class="card-action">
           <a href="{{ url_for('edit_category', catgeory_id=category.id)}}" class="btn green accent-4">Edit</a>
           <a href="#modal-{{ category.id }}" class="btn red modal-trigger">Delete</a>
