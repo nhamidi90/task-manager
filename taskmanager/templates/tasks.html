@@ -17,9 +17,9 @@
         <div class="collapsible-header white-text light-blue darken-4">
             <i class="material-icons">filter_drama</i>
             <strong>{{ task.task_name }}</strong> : {{ task.due_date.strftime("%d %B, %Y")}}
-            {{% if task.is_urgent == True %}}
+            {% if task.is_urgent == True %}
                 <i class="material-icons prefix">priority_high</i>
-            {{% endif %}}
+            {% endif %}
         </div>
         <div class="collapsible-body">
             <strong>{{ task.category }}</strong>
